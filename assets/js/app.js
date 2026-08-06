@@ -74,6 +74,44 @@
       elLoader = $('#loader'), elDeckbar = $('#deckbar'),
       elPrev = $('#navPrev'), elNext = $('#navNext'), elDots = $('#deckDots');
 
+  /* ───────────────────────────────────────────────
+     Auto-ajuste: reduz a escala da tela ativa até o
+     conteúdo caber inteiro, sem rolagem e sem corte.
+     ─────────────────────────────────────────────── */
+  function fitScreen(screen) {
+    if (!screen || getComputedStyle(screen).display === 'none') return;
+    var inner = screen.querySelector('.screen__inner');
+    if (!inner) return;
+
+    inner.style.setProperty('--fit', '1');
+    var cs = getComputedStyle(screen);
+    var avail = screen.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+    if (avail <= 0) return;
+
+    var k = 1;
+    for (var i = 0; i < 12; i++) {
+      var need = inner.scrollHeight;
+      if (need <= avail) break;
+      k = Math.max(0.52, k * (avail / need) * 0.995);
+      inner.style.setProperty('--fit', String(k));
+      if (k <= 0.52) break;
+    }
+  }
+
+  function fitAll() {
+    var active = document.querySelector('.stage--active');
+    if (!active) return;
+    Array.prototype.forEach.call(active.querySelectorAll('.screen'), fitScreen);
+  }
+
+  var fitTimer;
+  function fitSoon() { clearTimeout(fitTimer); fitTimer = setTimeout(fitAll, 60); }
+
+  window.addEventListener('resize', fitSoon);
+  window.addEventListener('orientationchange', function () { setTimeout(fitAll, 250); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitAll);
+  window.addEventListener('load', fitAll);
+
   /* ─────────────── Etapas ─────────────── */
   function goStage(id) {
     ['stage-intro', 'stage-quiz', 'stage-deck'].forEach(function (s) {
@@ -81,6 +119,7 @@
       if (el) el.classList.toggle('stage--active', s === id);
     });
     elDeckbar.style.display = (id === 'stage-deck') ? 'flex' : 'none';
+    fitAll();
   }
 
   /* ─────────────── Quiz ─────────────── */
@@ -103,6 +142,7 @@
       b.addEventListener('click', function () { pick(idx, b); });
       elQOpts.appendChild(b);
     });
+    fitAll();
   }
 
   function pick(idx, btn) {
@@ -188,6 +228,7 @@
     Array.prototype.forEach.call(elDots.children, function (s, i) { s.classList.toggle('on', i === n); });
     elPrev.disabled = n === 0;
     elNext.disabled = n === TOTAL - 1;
+    fitScreen(SLIDES[n]);
     var inner = SLIDES[n].querySelector('.screen__inner');
     inner.style.animation = 'none';
     void inner.offsetWidth;

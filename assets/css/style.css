@@ -101,13 +101,14 @@ main{position:relative;z-index:2}
 .screen{
   height:100svh;height:100dvh;
   display:grid;place-items:center;
-  padding:clamp(74px,10svh,96px) clamp(18px,4vw,34px) clamp(66px,9svh,88px);
+  padding:clamp(68px,10svh,96px) clamp(16px,4vw,34px) clamp(78px,9svh,88px);
   overflow:hidden;
 }
-#stage-intro .screen,#stage-quiz .screen{padding-bottom:clamp(28px,5svh,48px)}
+#stage-intro .screen,#stage-quiz .screen{padding-bottom:clamp(24px,5svh,48px)}
 .screen__inner{
   width:100%;max-width:1000px;
-  font-size:clamp(11.8px,1.86svh,17px);
+  /* --fit e reduzido por JS ate o conteudo caber inteiro na tela */
+  font-size:calc(clamp(11.8px,1.86svh,17px) * var(--fit,1));
   animation:in .6s var(--ease) both;
 }
 .screen__inner.center{text-align:center;display:flex;flex-direction:column;align-items:center}
@@ -122,10 +123,10 @@ main{position:relative;z-index:2}
 .tagline{font-size:.82em;letter-spacing:.12em;text-transform:uppercase;color:var(--v-200);
   background:rgba(139,92,246,.10);border:1px solid var(--line-2);
   padding:.6em 1.3em;border-radius:99px;font-weight:500;margin-bottom:2.2em;line-height:1.4}
-.hero__mark{width:clamp(72px,11svh,116px);margin-bottom:1.5em;
+.hero__mark{width:6.2em;height:auto;margin-bottom:1.4em;
   filter:drop-shadow(0 0 40px rgba(139,92,246,.6));animation:hover 6s ease-in-out infinite}
 @keyframes hover{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.hero__title{font-size:clamp(26px,4.6svh,52px);letter-spacing:-.035em;line-height:1.14;margin-bottom:.55em}
+.hero__title{font-size:2.55em;letter-spacing:-.035em;line-height:1.14;margin-bottom:.55em}
 .hero__lead{font-size:1.16em;color:var(--ink-2);font-weight:300;max-width:38em;margin-bottom:2.2em;line-height:1.62}
 .hero__hint{font-size:.82em;color:var(--ink-3);margin-top:1em}
 .hero__strip{display:flex;flex-wrap:wrap;justify-content:center;gap:.7em;margin-top:2.6em}
@@ -163,7 +164,7 @@ main{position:relative;z-index:2}
 
 /* ═══════ QUIZ ═══════ */
 .quiz{width:100%;max-width:740px;margin:0 auto;background:var(--panel);border:1px solid var(--line-2);
-  border-radius:2.2em;padding:clamp(22px,3.4svh,42px);backdrop-filter:blur(26px) saturate(150%);
+  border-radius:2.2em;padding:1.85em;backdrop-filter:blur(26px) saturate(150%);
   -webkit-backdrop-filter:blur(26px) saturate(150%);box-shadow:var(--shadow);position:relative;overflow:hidden}
 .quiz::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;
   background:linear-gradient(140deg,rgba(201,179,255,.5),transparent 40%,transparent 60%,rgba(124,58,237,.4));
@@ -181,7 +182,7 @@ main{position:relative;z-index:2}
 .quiz__body.is-out{opacity:0;transform:translateX(-16px)}
 .quiz__eyebrow{font-size:.74em;letter-spacing:.2em;text-transform:uppercase;color:var(--v-300);
   font-weight:600;margin-bottom:.8em}
-.quiz__question{font-size:clamp(18px,2.85svh,29px);letter-spacing:-.028em;line-height:1.24;margin-bottom:1.4em}
+.quiz__question{font-size:1.62em;letter-spacing:-.028em;line-height:1.24;margin-bottom:1.4em}
 .quiz__options{display:flex;flex-direction:column;gap:.6em}
 .qopt{display:flex;align-items:center;gap:.95em;width:100%;text-align:left;cursor:pointer;
   background:rgba(255,255,255,.028);border:1px solid var(--line);border-radius:1.05em;
@@ -220,7 +221,7 @@ main{position:relative;z-index:2}
   box-shadow:0 0 0 0 rgba(139,92,246,.6);animation:pulse 2.4s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(139,92,246,.6)}70%{box-shadow:0 0 0 12px rgba(139,92,246,0)}100%{box-shadow:0 0 0 0 rgba(139,92,246,0)}}
 
-.s-title{font-size:clamp(21px,3.5svh,40px);letter-spacing:-.032em;margin-bottom:.5em;line-height:1.15}
+.s-title{font-size:1.98em;letter-spacing:-.032em;margin-bottom:.5em;line-height:1.15}
 .s-lead{font-size:1.12em;color:var(--ink-2);font-weight:300;max-width:44em;line-height:1.62;margin-bottom:1.8em}
 .center .s-lead{margin-left:auto;margin-right:auto}
 
@@ -273,13 +274,13 @@ main{position:relative;z-index:2}
 .pillar span{font-size:.85em;color:var(--ink-3);font-weight:300;line-height:1.5}
 
 /* tela final */
-.finale{position:relative;padding:clamp(24px,4svh,52px) clamp(20px,4vw,48px);border-radius:2.2em;
+.finale{position:relative;padding:2em 1.9em;border-radius:2.2em;
   background:linear-gradient(150deg,rgba(46,16,101,.6),rgba(17,11,38,.75));
   border:1px solid var(--line-2);box-shadow:0 40px 100px -40px rgba(124,58,237,.9);overflow:hidden}
 .finale__glow{position:absolute;top:-70%;left:50%;transform:translateX(-50%);width:130%;height:160%;
   background:radial-gradient(circle,rgba(139,92,246,.3),transparent 62%);pointer-events:none}
 .finale>*{position:relative;z-index:2}
-.finale__mark{width:clamp(50px,7svh,76px);margin:0 auto 1.2em;
+.finale__mark{width:3.9em;height:auto;margin:0 auto 1.1em;
   filter:drop-shadow(0 0 32px rgba(167,139,250,.75));animation:hover 6s ease-in-out infinite}
 .finale__meta{font-size:.82em;color:var(--ink-3);margin-top:1.1em}
 .finale__sign{font-size:.8em;color:var(--v-300);margin-top:1.6em;letter-spacing:.04em}
@@ -325,12 +326,22 @@ main{position:relative;z-index:2}
   .feats span{font-size:.8em;line-height:1.32}
   .s-lead{margin-bottom:1.2em}
 }
-/* telas baixas: reduz ao essencial para nunca precisar de rolagem */
-@media (max-height:700px) and (max-width:560px){
-  .feats span,.steps em,.pillar span{display:none}
-  .feats b,.steps b{margin-bottom:0}
-  .feats li{padding:.55em .9em}
-  .steps li{padding:.6em .95em}
+/* telas muito baixas: compacta o cromo para sobrar area de conteudo */
+@media (max-height:640px){
+  .topbar{padding:9px 0}
+  .brand__mark{width:30px;height:30px}
+  .brand__text strong{font-size:13px}
+  .deckbar{padding:10px clamp(16px,4vw,34px) calc(10px + env(safe-area-inset-bottom))}
+  .nav{width:38px;height:38px}
+  .screen{padding-top:54px;padding-bottom:62px}
+  #stage-intro .screen,#stage-quiz .screen{padding-bottom:16px}
+  .quiz{padding:1.3em;border-radius:1.6em}
+  .quiz__head{margin-bottom:1.2em}
+  .quiz__question{margin-bottom:1em}
+  .qopt{padding:.68em .9em;border-radius:.85em}
+  .quiz__foot{margin-top:.9em;padding-top:.7em}
+  .hero__mark{margin-bottom:1em}
+  .tagline{margin-bottom:1.4em}
 }
 @media (prefers-reduced-motion:reduce){
   .scene__orb,.scene__grid,.hero__mark,.finale__mark,.btn--primary::after,.dot{animation:none}
