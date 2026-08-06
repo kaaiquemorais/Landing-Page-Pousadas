@@ -20,8 +20,8 @@
       title: 'Landing Page Profissional',
       items: ['Estrutura, acomodações e lazer',
               'Localização com mapa e rota',
-              'Informações de locação',
               'Botão de WhatsApp fixo',
+              'Responsiva: PC e celular',
               'Domínio próprio incluso']
     },
     {
@@ -177,9 +177,9 @@
     font('semibold', 10.6); ink(C.ink);
     doc.text('A sua chácara já é encantadora. Agora ela precisa ser encontrada.', M, 56.5);
     font('normal', 8); ink(C.ink2);
-    doc.text(wrap('Uma página profissional, feita primeiro para o celular, que apresenta o espaço de cima a ' +
-             'baixo e leva o visitante direto para a conversa no WhatsApp.', CW), M, 62.4,
-             { lineHeightFactor: 1.35 });
+    doc.text(wrap('Uma página profissional e totalmente responsiva, que se adapta ao computador e ao celular, ' +
+             'apresenta o espaço de cima a baixo e leva o visitante direto para a conversa no WhatsApp.', CW),
+             M, 62.4, { lineHeightFactor: 1.35 });
   }
 
   /* ═══════ 3. Entregas ═══════ */
