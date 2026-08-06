@@ -175,7 +175,7 @@
   /* ═══════ 2. Frase de abertura ═══════ */
   function intro() {
     font('semibold', 10.6); ink(C.ink);
-    doc.text('A sua chácara já é encantadora. Agora ela precisa ser encontrada.', M, 56.5);
+    doc.text('Seu espaço é incrível. Seu site também precisa ser.', M, 56.5);
     font('normal', 8); ink(C.ink2);
     doc.text(wrap('Airbnb, Booking e as outras cobram comissão sobre cada locação, todo mês. Com um site próprio, ' +
              'responsivo no computador e no celular, a reserva chega direto no seu WhatsApp e 100% do valor fica com você.', CW),
