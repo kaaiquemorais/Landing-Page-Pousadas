@@ -310,6 +310,7 @@ main{position:relative;z-index:2}
   .pillars{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:560px){
+  .tagline{display:none}
   .brand__text small{display:none}
   .hero__strip{flex-direction:column;width:100%;gap:.5em}
   .hero__strip li{flex-direction:row;align-items:baseline;gap:.6em;padding:.7em 1.1em;min-width:0}
