@@ -341,7 +341,26 @@
     terms();
     footer();
 
-    doc.save(FILE);
+    return deliver();
+  }
+
+  /* Entrega o arquivo. Usa âncora com `download`, que funciona em todos os
+     navegadores atuais, e devolve a URL para o link de emergência. */
+  function deliver() {
+    var url = URL.createObjectURL(doc.output('blob'));
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = FILE;
+    a.rel = 'noopener';
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function () {
+      if (a.parentNode) a.parentNode.removeChild(a);
+    }, 2000);
+    /* a URL segue válida por alguns minutos para o link de emergência */
+    setTimeout(function () { URL.revokeObjectURL(url); }, 300000);
+    return url;
   }
 
   /* ═══════ Botão ═══════ */
@@ -362,15 +381,14 @@
         return new Promise(function (r) { setTimeout(r, 80); });
       })
       .then(function () {
-        build();
+        var url = build();
         btn.classList.remove('is-busy');
         btn.classList.add('is-done');
         label.textContent = 'Proposta baixada com sucesso';
-        meta.textContent = 'Se o download não aparecer, confira a pasta de downloads do seu aparelho.';
+        meta.innerHTML = 'Não apareceu? <a href="' + url + '" target="_blank" rel="noopener">toque aqui para abrir o PDF</a>.';
         setTimeout(function () {
           btn.classList.remove('is-done');
           label.textContent = 'Baixar proposta novamente';
-          meta.textContent = metaDefault;
         }, 6000);
       })
       .catch(function (err) {
@@ -378,6 +396,7 @@
         btn.classList.remove('is-busy');
         label.textContent = 'Tentar novamente';
         meta.textContent = 'Não foi possível gerar o arquivo. Verifique a conexão e tente de novo.';
+        void metaDefault;
       });
   });
 })();
