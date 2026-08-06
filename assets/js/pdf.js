@@ -177,8 +177,8 @@
     font('semibold', 10.6); ink(C.ink);
     doc.text('A sua chácara já é encantadora. Agora ela precisa ser encontrada.', M, 56.5);
     font('normal', 8); ink(C.ink2);
-    doc.text(wrap('Uma página profissional e totalmente responsiva, que se adapta ao computador e ao celular, ' +
-             'apresenta o espaço de cima a baixo e leva o visitante direto para a conversa no WhatsApp.', CW),
+    doc.text(wrap('Airbnb, Booking e as outras cobram comissão sobre cada locação, todo mês. Com um site próprio, ' +
+             'responsivo no computador e no celular, a reserva chega direto no seu WhatsApp e 100% do valor fica com você.', CW),
              M, 62.4, { lineHeightFactor: 1.35 });
   }
 

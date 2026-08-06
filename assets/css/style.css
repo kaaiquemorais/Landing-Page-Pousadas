@@ -244,6 +244,26 @@ main{position:relative;z-index:2}
   box-shadow:0 0 10px rgba(139,92,246,.9)}
 .feats span{display:block;font-size:.86em;color:var(--ink-3);font-weight:300;line-height:1.5}
 
+/* comparativo plataforma x site proprio */
+.versus{display:grid;grid-template-columns:1fr 1fr;gap:.75em;width:100%;align-items:stretch}
+.vs{padding:1.15em 1.25em;border-radius:1.15em;border:1px solid var(--line);
+  background:var(--panel-2);backdrop-filter:blur(10px);transition:all .35s var(--ease)}
+.vs--good{border-color:var(--v-500);
+  background:linear-gradient(150deg,rgba(139,92,246,.20),rgba(139,92,246,.04));
+  box-shadow:0 0 0 1px rgba(139,92,246,.22),0 24px 55px -30px rgba(124,58,237,.95)}
+.vs h3{margin:0 0 .9em}
+.vs__tag{display:inline-block;font-size:.72em;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:600;color:var(--ink-3)}
+.vs--good .vs__tag{color:var(--v-200)}
+.vs ul{display:grid;gap:.55em}
+.vs li{display:flex;align-items:flex-start;gap:.6em;font-size:.9em;font-weight:300;
+  line-height:1.4;color:var(--ink-3)}
+.vs--good li{color:var(--ink-2)}
+.vs__ico{flex:none;width:1.35em;height:1.35em;border-radius:.42em;display:grid;place-items:center;
+  font-size:.72em;font-style:normal;font-weight:700;line-height:1;margin-top:.12em}
+.vs__ico--x{background:rgba(255,255,255,.055);color:var(--ink-3);border:1px solid var(--line)}
+.vs__ico--v{background:var(--grad-btn);color:#fff;box-shadow:0 0 14px rgba(139,92,246,.6)}
+
 .s-note{margin-top:1.2em;padding:1em 1.2em;border-radius:1.05em;font-size:.94em;font-weight:300;
   color:var(--ink-2);line-height:1.55;
   background:linear-gradient(120deg,rgba(139,92,246,.16),rgba(139,92,246,.04));
@@ -311,6 +331,8 @@ main{position:relative;z-index:2}
 }
 @media (max-width:560px){
   .tagline{display:none}
+  .vs{padding:.95em 1em;border-radius:1em}
+  .vs li{gap:.5em}
   .brand__text small{display:none}
   .hero__strip{flex-direction:column;width:100%;gap:.5em}
   .hero__strip li{flex-direction:row;align-items:baseline;gap:.6em;padding:.7em 1.1em;min-width:0}
