@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#07060F">
+<title>Proposta Comercial | Avyxyva Marketing Digital</title>
+<meta name="description" content="Proposta da Avyxyva Marketing Digital para chácaras de locação em Socorro/SP: landing page profissional, painel de gestão e produção audiovisual.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/logo.png">
+<meta property="og:title" content="Proposta Comercial | Avyxyva">
+<meta property="og:description" content="A sua chácara já é encantadora. Agora ela precisa ser encontrada.">
+<meta property="og:image" content="assets/img/logo.png">
+<meta property="og:type" content="website">
+<link rel="preload" href="assets/webfonts/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/webfonts/Poppins-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ═══════════ AMBIENTE ═══════════ -->
+<div class="scene" aria-hidden="true">
+  <div class="scene__grid"></div>
+  <div class="scene__orb scene__orb--a"></div>
+  <div class="scene__orb scene__orb--b"></div>
+  <div class="scene__orb scene__orb--c"></div>
+  <div class="scene__noise"></div>
+</div>
+
+<!-- ═══════════ TOPO ═══════════ -->
+<header class="topbar" id="topbar">
+  <div class="topbar__inner">
+    <span class="brand">
+      <img class="brand__mark" src="assets/img/logo.png" alt="Avyxyva" width="40" height="40">
+      <span class="brand__text">
+        <strong>Avyxyva</strong>
+        <small>Marketing Digital</small>
+      </span>
+    </span>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ═══════════ ETAPA 1 : ABERTURA ═══════════ -->
+  <section class="stage stage--active" id="stage-intro">
+    <div class="screen">
+      <div class="screen__inner hero">
+
+        <span class="tagline">Proposta preparada com cuidado, para quem cuida do espaço</span>
+
+        <img class="hero__mark" src="assets/img/logo.png" alt="Avyxyva" width="120" height="120">
+
+        <h1 class="hero__title">
+          A sua chácara já é <span class="grad">encantadora</span>.<br>
+          Agora ela precisa ser <span class="grad">encontrada</span>.
+        </h1>
+
+        <p class="hero__lead">
+          Quem cuida de cada detalhe do espaço, do gramado à área de lazer, já fez a parte
+          mais difícil. O que falta é levar esse cuidado até as pessoas certas e transformar
+          quem <em>olha</em> em quem <em>reserva</em>.
+        </p>
+
+        <button class="btn btn--primary btn--lg" id="startQuiz" type="button">
+          <span>Começar pelas 3 perguntas</span>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <span class="hero__hint">leva menos de 40 segundos</span>
+
+        <ul class="hero__strip">
+          <li><b>Landing Page</b><span>Profissional</span></li>
+          <li><b>Painel CRM</b><span>Gestão e lucro</span></li>
+          <li><b>Drone e Fotos</b><span>Produção completa</span></li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ ETAPA 2 : QUIZ ═══════════ -->
+  <section class="stage" id="stage-quiz">
+    <div class="screen">
+      <div class="screen__inner">
+
+        <div class="quiz" id="quizCard">
+          <div class="quiz__head">
+            <div class="quiz__count"><b id="qNum">01</b><span>/ 03</span></div>
+            <div class="quiz__progress"><i id="qBar" style="width:33.33%"></i></div>
+          </div>
+
+          <div class="quiz__body" id="quizBody">
+            <p class="quiz__eyebrow" id="qEyebrow">Sobre o espaço</p>
+            <h2 class="quiz__question" id="qText">…</h2>
+            <div class="quiz__options" id="qOptions" role="group"></div>
+          </div>
+
+          <div class="quiz__foot">
+            <button class="btn btn--ghost" id="qBack" type="button">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+              Voltar
+            </button>
+          </div>
+        </div>
+
+        <div class="loader" id="loader" hidden>
+          <div class="loader__ring"><img src="assets/img/logo.png" alt="" width="52" height="52"></div>
+          <div class="loader__bar"><i></i></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ ETAPA 3 : PROPOSTA EM TELAS ═══════════ -->
+  <section class="stage" id="stage-deck">
+
+    <!-- Tela 1 : leitura personalizada -->
+    <div class="screen slide" data-slide="0">
+      <div class="screen__inner center">
+        <h2 class="s-title">Aqui está o que eu enxerguei</h2>
+        <p class="s-lead" id="diagText">…</p>
+        <div class="chips" id="diagChips"></div>
+      </div>
+    </div>
+
+    <!-- Tela 2 : landing page -->
+    <div class="screen slide" data-slide="1">
+      <div class="screen__inner">
+        <header class="s-head">
+          <span class="s-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="15" rx="2.5"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01M8 22h8"/></svg>
+          </span>
+          <div>
+            <span class="s-num">Entrega 01 · principal</span>
+            <h2 class="s-title">Landing Page Profissional</h2>
+          </div>
+        </header>
+        <p class="s-lead">
+          Uma página única, rápida e pensada primeiro para o celular. Ela apresenta a chácara
+          de cima a baixo e termina sempre no mesmo lugar: a conversa no WhatsApp.
+        </p>
+        <ul class="feats">
+          <li><b>Estrutura do espaço</b><span>Tudo o que a chácara oferece, fácil de entender.</span></li>
+          <li><b>Acomodações</b><span>Quartos, camas e capacidade de pessoas.</span></li>
+          <li><b>Área de lazer</b><span>Piscina, churrasqueira, campo e salão em destaque.</span></li>
+          <li><b>Localização</b><span>Mapa e rota até a chácara, em Socorro/SP.</span></li>
+          <li><b>Informações de locação</b><span>Regras, períodos e o que está incluso.</span></li>
+          <li><b>Botão de WhatsApp</b><span>Fixo na tela, com a mensagem já iniciada.</span></li>
+        </ul>
+        <p class="s-note"><b>Domínio próprio incluso</b> por 1 ou 3 anos, e alterações futuras no site sem nenhuma cobrança adicional.</p>
+      </div>
+    </div>
+
+    <!-- Tela 3 : CRM -->
+    <div class="screen slide" data-slide="2">
+      <div class="screen__inner">
+        <header class="s-head">
+          <span class="s-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l3.5-4 3 2.5L20 7"/></svg>
+          </span>
+          <div>
+            <span class="s-num">Entrega 02 · opcional</span>
+            <h2 class="s-title">CRM, o painel de gestão</h2>
+          </div>
+        </header>
+        <p class="s-lead">
+          Um painel exclusivo da chácara, no celular ou no computador, que responde a pergunta
+          que mais importa: quanto o espaço deu de lucro neste mês.
+        </p>
+        <ul class="feats">
+          <li><b>Cadastro de locações</b><span>Cada evento com cliente, período e combinados.</span></li>
+          <li><b>Datas reservadas</b><span>Sem risco de reservar a mesma data duas vezes.</span></li>
+          <li><b>Valores recebidos</b><span>Entradas, sinais e pagamentos finalizados.</span></li>
+          <li><b>Controle de gastos</b><span>Manutenção, limpeza, equipe e compras.</span></li>
+          <li><b>Lucro por mês</b><span>O resultado real, calculado automaticamente.</span></li>
+          <li><b>Gráficos de evolução</b><span>Locações, faturamento e lucro ao longo do ano.</span></li>
+        </ul>
+        <p class="s-note"><b>A decisão deixa de ser palpite.</b> Vocês passam a administrar a chácara como um negócio, e não como algo que se resolve no improviso.</p>
+      </div>
+    </div>
+
+    <!-- Tela 4 : audiovisual -->
+    <div class="screen slide" data-slide="3">
+      <div class="screen__inner">
+        <header class="s-head">
+          <span class="s-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="7.5" width="12" height="9" rx="1.6"/><path d="M14.5 11l7-3.5v9L14.5 13z"/></svg>
+          </span>
+          <div>
+            <span class="s-num">Entrega 03 · opcional</span>
+            <h2 class="s-title">Produção Audiovisual</h2>
+          </div>
+        </header>
+        <p class="s-lead">
+          Um site profissional com fotos improvisadas entrega metade do resultado.
+          Aqui a gente resolve a outra metade: imagens que mostram a dimensão real do espaço.
+        </p>
+        <ul class="feats feats--4">
+          <li><b>Filmagem com drone</b><span>O terreno inteiro visto de cima.</span></li>
+          <li><b>Câmera profissional</b><span>Ambientes internos e externos em alta.</span></li>
+          <li><b>Sessão de fotos</b><span>Banco de imagens para site e redes.</span></li>
+          <li><b>Edição do vídeo</b><span>Vídeo final pronto para publicar.</span></li>
+        </ul>
+        <p class="s-note"><b>Podemos organizar para setembro.</b> Escolhemos um dia de sol, fazemos as fotos e a filmagem no local, e o site nasce já com o material novo.</p>
+      </div>
+    </div>
+
+    <!-- Tela 5 : etapas -->
+    <div class="screen slide" data-slide="4">
+      <div class="screen__inner">
+        <span class="kicker"><i class="dot"></i> Como acontece</span>
+        <h2 class="s-title">Do sim até o site no ar</h2>
+        <p class="s-lead">Cinco etapas simples, com vocês acompanhando tudo do começo ao fim.</p>
+        <ol class="steps">
+          <li><span>1</span><b>Conversa e alinhamento</b><em>O que a chácara precisa mostrar e a data da produção.</em></li>
+          <li><span>2</span><b>Produção em Socorro/SP</b><em>Fotos e filmagem com drone no local.</em></li>
+          <li><span>3</span><b>Desenvolvimento</b><em>Construção da landing page e, se escolhido, do painel.</em></li>
+          <li><span>4</span><b>Ajustes e publicação</b><em>Revisão de cada detalhe e site no ar com o domínio.</em></li>
+          <li><span>5</span><b>Suporte contínuo</b><em>Alterações no site não têm custo adicional.</em></li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Tela 6 : garantias -->
+    <div class="screen slide" data-slide="5">
+      <div class="screen__inner center">
+        <span class="kicker"><i class="dot"></i> O que está combinado</span>
+        <h2 class="s-title">Sem letra miúda</h2>
+        <p class="s-lead">Condições claras, definidas antes de qualquer decisão.</p>
+        <div class="pillars">
+          <div class="pillar"><b>Sem taxa escondida</b><span>O que está na proposta é exatamente o que vale.</span></div>
+          <div class="pillar"><b>Alterações inclusas</b><span>Mudanças no site depois da entrega não geram cobrança.</span></div>
+          <div class="pillar"><b>Feito para celular</b><span>É lá que a maioria vai abrir, e é lá que precisa ser impecável.</span></div>
+          <div class="pillar"><b>Atendimento direto</b><span>Você fala comigo, Kaique, do começo ao fim.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tela 7 : download -->
+    <div class="screen slide" data-slide="6">
+      <div class="screen__inner center finale">
+        <span class="finale__glow" aria-hidden="true"></span>
+        <img class="finale__mark" src="assets/img/logo.png" alt="Avyxyva" width="72" height="72">
+        <h2 class="s-title">Andreia e Pedro, o próximo passo<br>está a <span class="grad">um clique</span> daqui.</h2>
+        <p class="s-lead">
+          Preparei o documento completo com o detalhe de cada entrega, os valores à vista no Pix,
+          as opções de parcelamento em até 12x e todas as condições combinadas.
+          É só baixar, ler com calma e me chamar.
+        </p>
+        <button class="btn btn--primary btn--xl" id="downloadPdf" type="button">
+          <svg class="btn__ico" viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>
+          <span id="dlLabel">Baixar proposta completa em PDF</span>
+          <i class="btn__spin" aria-hidden="true"></i>
+        </button>
+        <p class="finale__meta" id="dlMeta">Documento em PDF, abre no computador e no celular</p>
+        <p class="finale__sign">Kaique Morais · Avyxyva Marketing Digital · Socorro/SP</p>
+      </div>
+    </div>
+
+    <!-- Navegação -->
+    <nav class="deckbar" id="deckbar" aria-label="Navegação da proposta">
+      <button class="nav" id="navPrev" type="button" aria-label="Anterior">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="dots" id="deckDots"></div>
+      <button class="nav nav--next" id="navNext" type="button" aria-label="Próximo">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </nav>
+
+  </section>
+</main>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/pdf.js"></script>
+</body>
+</html>
